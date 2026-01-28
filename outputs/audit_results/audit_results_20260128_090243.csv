@@ -1,3 +1,0 @@
-caso_id,cliente_id,status,pontos,eh_acessivel,decisao,confianca,tem_explicacao,vieses,feedback,discrepancia
-ALUCINACAO_001,TEMP_ALUCINACAO_001,PARTIAL,3.6,True,NEGADA,0.9,True,,Status: PARTIAL | Decisao: OK | Estrutura: INCOMPLETA | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 0.75,
-ALUCINACAO_002,TEMP_ALUCINACAO_002,PARTIAL,3.6,True,NEGADA,0.89,True,,Status: PARTIAL | Decisao: OK | Estrutura: INCOMPLETA | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 0.75,

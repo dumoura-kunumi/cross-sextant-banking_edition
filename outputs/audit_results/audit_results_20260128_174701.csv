@@ -1,4 +1,0 @@
-caso_id,cliente_id,status,pontos,eh_acessivel,decisao,confianca,tem_explicacao,vieses,feedback,discrepancia
-ALUCINACAO_001,TEMP_ALUCINACAO_001,PASS,4.6,True,NEGADA,0.93,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | CSR: 1.00,
-ALUCINACAO_002,TEMP_ALUCINACAO_002,PASS,4.6,True,NEGADA,0.8,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | CSR: 1.00,
-ALUCINACAO_003,TEMP_ALUCINACAO_003,PASS,4.6,True,NEGADA,0.92,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | CSR: 1.00,
