@@ -12,6 +12,7 @@ class TipoCaso(str, Enum):
     """Tipos de cenários de teste"""
     ALUCINACAO = "alucinacao"
     NEEDLE = "needle"
+    NEEDLE_IN_HAYSTACK = "needle_in_haystack"
     INCONSISTENCIA = "inconsistencia"
     ADVERSARIAL = "adversarial"
     ACESSIBILIDADE = "acessibilidade"
@@ -56,7 +57,7 @@ class Cliente(BaseModel):
     tempo_emprego_meses: Optional[int] = None
     score_atual: int = Field(..., ge=0, le=1000, description="Score de crédito 0-1000")
     score_componentes: Optional[Dict[str, int]] = None
-    renda_mensal: float = Field(..., ge=0, description="Renda mensal em R$")
+    renda_mensal: Optional[float] = Field(None, ge=0, description="Renda mensal em R$ (PF only)")
     fonte_renda: Optional[str] = None
     saldo_conta: Optional[float] = None
     movimentacao_media_mensal: Optional[float] = None
