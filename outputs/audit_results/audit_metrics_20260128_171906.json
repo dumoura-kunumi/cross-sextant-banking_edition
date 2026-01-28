@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-01-28T17:19:06.646684",
+  "metricas": {
+    "total_casos": 25,
+    "casos_pass": 15,
+    "casos_fail": 0,
+    "casos_partial": 10,
+    "taxa_acerto": 0.6,
+    "isr_medio": 0.8,
+    "taxa_acessibilidade": 1.0,
+    "taxa_por_tipo": {
+      "ALUCINACAO": 0.6
+    },
+    "disparate_impact": null,
+    "flesch_kincaid_medio": 9.618181818181817,
+    "vieses_detectados": [],
+    "timestamp": "2026-01-28 17:19:06.644523"
+  },
+  "metricas_por_categoria": [
+    {
+      "categoria": "ALUCINACAO",
+      "total": 25,
+      "pass_count": 15,
+      "fail_count": 0,
+      "partial_count": 10,
+      "taxa_acerto": 0.6,
+      "isr_medio": 0.8,
+      "taxa_acessibilidade": 1.0
+    }
+  ]
+}
