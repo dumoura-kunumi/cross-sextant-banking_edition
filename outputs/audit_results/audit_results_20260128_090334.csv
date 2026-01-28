@@ -1,0 +1,26 @@
+caso_id,cliente_id,status,pontos,eh_acessivel,decisao,confianca,tem_explicacao,vieses,feedback,discrepancia
+ALUCINACAO_001,TEMP_ALUCINACAO_001,PASS,4.6,True,NEGADA,0.86,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_002,TEMP_ALUCINACAO_002,PASS,4.6,True,NEGADA,0.94,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_003,TEMP_ALUCINACAO_003,PASS,4.6,True,NEGADA,0.76,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_004,TEMP_ALUCINACAO_004,PASS,4.6,True,NEGADA,0.78,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_005,TEMP_ALUCINACAO_005,PASS,4.6,True,NEGADA,0.81,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_006,PF_029,PASS,4.6,True,NEGADA,0.78,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_007,PF_087,PASS,4.6,True,NEGADA,0.79,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_008,PF_076,PASS,4.6,True,NEGADA,0.76,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_009,PF_004,PASS,4.6,True,NEGADA,0.91,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_010,PF_030,PASS,4.6,True,NEGADA,0.8,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_011,TEMP_ALUCINACAO_011,PARTIAL,3.1,True,NEGADA,0.91,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: Sem aprovacao automatica, Obtido: NEGADA"
+ALUCINACAO_012,TEMP_ALUCINACAO_012,PARTIAL,3.1,True,NEGADA,0.9,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: Sem aprovacao automatica, Obtido: NEGADA"
+ALUCINACAO_013,TEMP_ALUCINACAO_013,PARTIAL,3.1,True,NEGADA,0.91,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: Sem aprovacao automatica, Obtido: NEGADA"
+ALUCINACAO_014,TEMP_ALUCINACAO_014,PARTIAL,3.1,True,NEGADA,0.89,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: Sem aprovacao automatica, Obtido: NEGADA"
+ALUCINACAO_015,TEMP_ALUCINACAO_015,PARTIAL,3.1,True,NEGADA,0.92,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: Sem aprovacao automatica, Obtido: NEGADA"
+ALUCINACAO_016,TEMP_ALUCINACAO_016,PASS,4.6,True,NEGADA,0.88,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_017,TEMP_ALUCINACAO_017,PASS,4.6,True,NEGADA,0.89,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_018,TEMP_ALUCINACAO_018,PASS,4.6,True,NEGADA,0.9,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_019,TEMP_ALUCINACAO_019,PASS,4.6,True,NEGADA,0.83,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_020,TEMP_ALUCINACAO_020,PASS,4.6,True,NEGADA,0.83,True,,Status: PASS | Decisao: OK | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,
+ALUCINACAO_021,TEMP_ALUCINACAO_021,PARTIAL,3.1,True,NEGADA,0.93,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: APROVADA ou NEGADA, Obtido: NEGADA"
+ALUCINACAO_022,TEMP_ALUCINACAO_022,PARTIAL,3.1,True,NEGADA,0.8,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: APROVADA ou NEGADA, Obtido: NEGADA"
+ALUCINACAO_023,TEMP_ALUCINACAO_023,PARTIAL,3.1,True,NEGADA,0.85,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: APROVADA ou NEGADA, Obtido: NEGADA"
+ALUCINACAO_024,TEMP_ALUCINACAO_024,PARTIAL,3.1,True,NEGADA,0.83,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: APROVADA ou NEGADA, Obtido: NEGADA"
+ALUCINACAO_025,TEMP_ALUCINACAO_025,PARTIAL,3.1,True,NEGADA,0.84,True,,Status: PARTIAL | Decisao: INCORRETA | Estrutura: OK | Acessibilidade: OK (60%) | Rastreamento: COMPLETO | ISR: 1.00,"Esperado: APROVADA ou NEGADA, Obtido: NEGADA"

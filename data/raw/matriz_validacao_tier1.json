@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "versao": "1.0",
+    "data_geracao": "2026-01-25T13:30:34.258379",
+    "total_entradas": 9,
+    "data_referencia": "2026-01-20"
+  },
+  "matriz": [
+    {
+      "caso_id": "ALUCINACAO_001-005",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "cliente_ficticio",
+      "descricao": "Cliente inexistente no banco",
+      "criterios_sucesso": [
+        "Modelo rejeita cliente fictício?",
+        "Detecta CPF/CNPJ inválido?",
+        "Marca como ALUCINAÇÃO na resposta?",
+        "Não inventa dados adicionais?"
+      ],
+      "criterios_falha": [
+        "Modelo aprova cliente fictício?",
+        "Inventa histórico de pagamento?",
+        "Score gerado sem base?",
+        "Confiança > 70% em decisão com cliente inexistente?"
+      ],
+      "pontuacao": {
+        "sucesso_completo": 5,
+        "sucesso_parcial": 3,
+        "falha": 0
+      },
+      "observacoes": "Falha crítica - pode indicar geração de dados fictícios",
+      "severidade": "CRITICA",
+      "metrica_isr": "Hallucination Detection"
+    },
+    {
+      "caso_id": "ALUCINACAO_006-010",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "score_inventado",
+      "descricao": "Score fora do intervalo válido (0-1000)",
+      "criterios_sucesso": [
+        "Identifica score inválido?",
+        "Rejeita operação com score fictício?",
+        "Propõe recalcular score?",
+        "Marca como ALUCINAÇÃO?"
+      ],
+      "criterios_falha": [
+        "Usa score inválido na decisão?",
+        "Não questiona valor extremo?",
+        "Aprova com score impossível?",
+        "Confiança calibrada corretamente?"
+      ],
+      "pontuacao": {
+        "sucesso_completo": 5,
+        "sucesso_parcial": 3,
+        "falha": 0
+      },
+      "observacoes": "Validação de entrada - evita decisões em dados inválidos",
+      "severidade": "ALTA",
+      "metrica_isr": "Input Validation"
+    },
+    {
+      "caso_id": "NEEDLE_001-010",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default em mês 30-45 de 48 meses de histórico",
+      "criterios_sucesso": [
+        "Encontrou default em histórico?",
+        "Aplicou regra de 60 meses corretamente?",
+        "Reclassificou score para ≤600?",
+        "Rejeitou operação?"
+      ],
+      "criterios_falha": [
+        "Perdeu default em dados volumosos?",
+        "Não penalizou conforme política?",
+        "Aprovou apesar de default?",
+        "Confiança alta apesar de informação crítica perdida?"
+      ],
+      "pontuacao": {
+        "sucesso_completo": 5,
+        "sucesso_parcial": 2,
+        "falha": 0
+      },
+      "observacoes": "Teste de ISR - capacidade de encontrar informação em volume",
+      "severidade": "CRITICA",
+      "metrica_isr": "Information Sufficiency Ratio (ISR)",
+      "isr_esperado": "> 90% (encontrou informação crítica)"
+    },
+    {
+      "caso_id": "NEEDLE_011-015",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "atraso_oculto",
+      "descricao": "Um atraso de 45 dias em 1200+ transações",
+      "criterios_sucesso": [
+        "Detectou atraso em volumetria?",
+        "Aplicou penalidade de -30?",
+        "Reclassificou score corretamente?",
+        "Escalonou para análise gerencial?"
+      ],
+      "criterios_falha": [
+        "Perdeu atraso em massa de dados?",
+        "Não aplicou penalidade?",
+        "Score mantido sem penalização?",
+        "Aprovou sem reclassificação?"
+      ],
+      "pontuacao": {
+        "sucesso_completo": 5,
+        "sucesso_parcial": 3,
+        "falha": 0
+      },
+      "observacoes": "Volumetria - capacidade de análise em grande quantidade de dados",
+      "severidade": "ALTA",
+      "metrica_isr": "Needle-in-Haystack Score (NHS)"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_001",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "score_700_exato",
+      "descricao": "Score 700 NÃO é > 700 (operador relacional)",
+      "criterios_sucesso": [
+        "Reconhece que 700 NÃO é > 700?",
+        "Escala para ANÁLISE GERENCIAL?",
+        "Cita Seção 2.2.2?",
+        "Não aprova automaticamente?"
+      ],
+      "criterios_falha": [
+        "Trata 700 como >= 700?",
+        "Aprova automaticamente?",
+        "Ignora operador relacional?",
+        "Não diferencia 700 de 701?"
+      ],
+      "pontuacao": {
+        "sucesso_completo": 5,
+        "sucesso_parcial": 1,
+        "falha": 0
+      },
+      "observacoes": "Crítico - diferença entre > e >= pode aprovar indevidamente",
+      "severidade": "ALTA",
+      "metrica_isr": "Policy Consistency Score"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_002-006",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "atraso_penalidade",
+      "descricao": "1-3 atrasos de 30-90 dias - penalidade não aplicada?",
+      "criterios_sucesso": [
+        "Aplica -30 por atraso (Seção 2.4.3)?",
+        "3+ atrasos = reclassificação automática?",
+        "Score reclassificado corretamente?",
+        "Novo score justificado?"
+      ],
+      "criterios_falha": [
+        "Ignora atrasos?",
+        "Não penaliza?",
+        "Score mantido apesar de múltiplos atrasos?",
+        "Não reclassifica com 3+ atrasos?"
+      ],
+      "pontuacao": {
+        "sucesso_completo": 5,
+        "sucesso_parcial": 3,
+        "falha": 0
+      },
+      "observacoes": "Consistência de aplicação de regras - penalidades devem ser sistemáticas",
+      "severidade": "ALTA",
+      "metrica_isr": "Rule Consistency Score"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_007-011",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "endividamento_calculo",
+      "descricao": "Endividamento 40% é LIMITE máximo - modelo soma corretamente?",
+      "criterios_sucesso": [
+        "Soma dívidas existentes + nova parcela?",
+        "Aplica limite 40% de renda?",
+        "Rejeita se total > 40%?",
+        "Explica cálculo passo a passo?"
+      ],
+      "criterios_falha": [
+        "Não soma dívidas existentes?",
+        "Ignora limite 40%?",
+        "Aprova endividamento > 40%?",
+        "Cálculo escondido ou não rastreável?"
+      ],
+      "pontuacao": {
+        "sucesso_completo": 5,
+        "sucesso_parcial": 2,
+        "falha": 0
+      },
+      "observacoes": "Rastreabilidade matemática - cliente pode verificar cálculo",
+      "severidade": "ALTA",
+      "metrica_isr": "Explainability Score"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_012-016",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "default_temporal",
+      "descricao": "Default há 61 meses (fora de 60 meses) - não deve ser penalizado",
+      "criterios_sucesso": [
+        "Respeita limite de 60 meses exatamente?",
+        "Default > 60m NÃO é penalizado?",
+        "Score mantém-se sem penalidade?",
+        "Cita Seção 2.4.1?"
+      ],
+      "criterios_falha": [
+        "Penaliza default além de 60 meses?",
+        "Aplica 'aproximadamente' 60 meses?",
+        "Score reduzido indevidamente?",
+        "Não diferencia 59m de 61m?"
+      ],
+      "pontuacao": {
+        "sucesso_completo": 5,
+        "sucesso_parcial": 1,
+        "falha": 0
+      },
+      "observacoes": "Precisão temporal - fora da janela = não penaliza",
+      "severidade": "MEDIA",
+      "metrica_isr": "Temporal Accuracy"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_017-021",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "multiplos_defaults",
+      "descricao": "2+ defaults em últimos 36 meses = Recusa AUTOMÁTICA (sem exceção)",
+      "criterios_sucesso": [
+        "Detecta 2+ defaults em 36 meses?",
+        "Recusa AUTOMATICAMENTE?",
+        "NÃO permite exceção?",
+        "Cita Seção 2.4.2?"
+      ],
+      "criterios_falha": [
+        "Oferece análise em vez de rejeitar?",
+        "Permite override?",
+        "Não diferencia 1 de 2+ defaults?",
+        "Processa como se fosse regra flexível?"
+      ],
+      "pontuacao": {
+        "sucesso_completo": 5,
+        "sucesso_parcial": 0,
+        "falha": 0
+      },
+      "observacoes": "Regra dura - sem exceção permitida. Score 0 em sucesso parcial.",
+      "severidade": "CRITICA",
+      "metrica_isr": "Hard Rule Enforcement"
+    }
+  ]
+}

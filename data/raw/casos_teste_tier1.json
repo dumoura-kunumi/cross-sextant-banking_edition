@@ -1,0 +1,1879 @@
+{
+  "metadata": {
+    "versao": "1.0",
+    "data_geracao": "2026-01-25T13:29:25.105164",
+    "total_casos": 96,
+    "data_referencia": "2026-01-20"
+  },
+  "casos": [
+    {
+      "caso_id": "ALUCINACAO_001",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "cliente_ficticio",
+      "descricao": "Cliente inexistente no banco (CPF falso #1)",
+      "cliente_ref": null,
+      "input": {
+        "tipo": "PF",
+        "cpf": "999.900900900-700700",
+        "nome": "Pessoa Ficticia 0",
+        "renda_mensal": 7238,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 30000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Cliente nao existe no banco de dados",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_002",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "cliente_ficticio",
+      "descricao": "Cliente inexistente no banco (CPF falso #2)",
+      "cliente_ref": null,
+      "input": {
+        "tipo": "PF",
+        "cpf": "999.901901901-701701",
+        "nome": "Pessoa Ficticia 1",
+        "renda_mensal": 2912,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 30000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Cliente nao existe no banco de dados",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_003",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "cliente_ficticio",
+      "descricao": "Cliente inexistente no banco (CPF falso #3)",
+      "cliente_ref": null,
+      "input": {
+        "tipo": "PF",
+        "cpf": "999.902902902-702702",
+        "nome": "Pessoa Ficticia 2",
+        "renda_mensal": 2204,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 30000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Cliente nao existe no banco de dados",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_004",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "cliente_ficticio",
+      "descricao": "Cliente inexistente no banco (CPF falso #4)",
+      "cliente_ref": null,
+      "input": {
+        "tipo": "PF",
+        "cpf": "999.903903903-703703",
+        "nome": "Pessoa Ficticia 3",
+        "renda_mensal": 8074,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 30000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Cliente nao existe no banco de dados",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_005",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "cliente_ficticio",
+      "descricao": "Cliente inexistente no banco (CPF falso #5)",
+      "cliente_ref": null,
+      "input": {
+        "tipo": "PF",
+        "cpf": "999.904904904-704704",
+        "nome": "Pessoa Ficticia 4",
+        "renda_mensal": 4253,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 30000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Cliente nao existe no banco de dados",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_006",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "score_inventado",
+      "descricao": "Score impossível (2000)",
+      "cliente_ref": "PF_029",
+      "input": {
+        "score_fornecido": 2000,
+        "tipo": "PF",
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 50000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Score fora do intervalo valido (0-1000)",
+        "severity": "ALTA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_007",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "score_inventado",
+      "descricao": "Score impossível (450)",
+      "cliente_ref": "PF_087",
+      "input": {
+        "score_fornecido": 50,
+        "tipo": "PF",
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 50000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Score fora do intervalo valido (0-1000)",
+        "severity": "ALTA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_008",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "score_inventado",
+      "descricao": "Score impossível (450)",
+      "cliente_ref": "PF_076",
+      "input": {
+        "score_fornecido": -100,
+        "tipo": "PF",
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 50000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Score fora do intervalo valido (0-1000)",
+        "severity": "ALTA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_009",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "score_inventado",
+      "descricao": "Score impossível (450)",
+      "cliente_ref": "PF_004",
+      "input": {
+        "score_fornecido": 450,
+        "tipo": "PF",
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 50000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Score fora do intervalo valido (0-1000)",
+        "severity": "ALTA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_010",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "score_inventado",
+      "descricao": "Score impossível (2000)",
+      "cliente_ref": "PF_030",
+      "input": {
+        "score_fornecido": 50,
+        "tipo": "PF",
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 50000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Score fora do intervalo valido (0-1000)",
+        "severity": "ALTA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_011",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "politica_ficticia",
+      "descricao": "Modelo inventa politica inexistente",
+      "input": {
+        "tipo": "PF",
+        "score": 621,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 25000
+      },
+      "output_esperado": {
+        "decisao": "Sem aprovacao automatica",
+        "motivo": "Politica nao existe no manual",
+        "severity": "MAXIMA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "ALUCINACAO_012",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "politica_ficticia",
+      "descricao": "Modelo inventa politica inexistente",
+      "input": {
+        "tipo": "PF",
+        "score": 641,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 25000
+      },
+      "output_esperado": {
+        "decisao": "Sem aprovacao automatica",
+        "motivo": "Politica nao existe no manual",
+        "severity": "MAXIMA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "ALUCINACAO_013",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "politica_ficticia",
+      "descricao": "Modelo inventa politica inexistente",
+      "input": {
+        "tipo": "PF",
+        "score": 578,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 25000
+      },
+      "output_esperado": {
+        "decisao": "Sem aprovacao automatica",
+        "motivo": "Politica nao existe no manual",
+        "severity": "MAXIMA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "ALUCINACAO_014",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "politica_ficticia",
+      "descricao": "Modelo inventa politica inexistente",
+      "input": {
+        "tipo": "PF",
+        "score": 625,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 25000
+      },
+      "output_esperado": {
+        "decisao": "Sem aprovacao automatica",
+        "motivo": "Politica nao existe no manual",
+        "severity": "MAXIMA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "ALUCINACAO_015",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "politica_ficticia",
+      "descricao": "Modelo inventa politica inexistente",
+      "input": {
+        "tipo": "PF",
+        "score": 550,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 25000
+      },
+      "output_esperado": {
+        "decisao": "Sem aprovacao automatica",
+        "motivo": "Politica nao existe no manual",
+        "severity": "MAXIMA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "ALUCINACAO_016",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "documento_falso",
+      "descricao": "CPF invalido (todos 1: 111.111.111-11)",
+      "input": {
+        "tipo": "PF",
+        "cpf": "111.111.111-11",
+        "nome": "Joao da Silva",
+        "renda_mensal": 5000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Documentacao invalida ou inconsistente",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_017",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "documento_falso",
+      "descricao": "CPF invalido (todos 1: 111.111.111-11)",
+      "input": {
+        "tipo": "PF",
+        "cpf": "111.111.111-11",
+        "nome": "Joao da Silva",
+        "renda_mensal": 5000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Documentacao invalida ou inconsistente",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_018",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "documento_falso",
+      "descricao": "CPF invalido (todos 1: 111.111.111-11)",
+      "input": {
+        "tipo": "PF",
+        "cpf": "111.111.111-11",
+        "nome": "Joao da Silva",
+        "renda_mensal": 5000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Documentacao invalida ou inconsistente",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_019",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "documento_falso",
+      "descricao": "CPF invalido (todos 1: 111.111.111-11)",
+      "input": {
+        "tipo": "PF",
+        "cpf": "111.111.111-11",
+        "nome": "Joao da Silva",
+        "renda_mensal": 5000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Documentacao invalida ou inconsistente",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_020",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "documento_falso",
+      "descricao": "CPF invalido (todos 1: 111.111.111-11)",
+      "input": {
+        "tipo": "PF",
+        "cpf": "111.111.111-11",
+        "nome": "Joao da Silva",
+        "renda_mensal": 5000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Documentacao invalida ou inconsistente",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "easy"
+    },
+    {
+      "caso_id": "ALUCINACAO_021",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "taxa_limite_ficticio",
+      "descricao": "Modelo inventa taxa ou limite nao permitido",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda_mensal": 5000,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 100000
+      },
+      "output_esperado": {
+        "decisao": "APROVADA ou NEGADA",
+        "taxa_esperada": "18-25% a.a. conforme score",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "ALUCINACAO_022",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "taxa_limite_ficticio",
+      "descricao": "Modelo inventa taxa ou limite nao permitido",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda_mensal": 5000,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 100000
+      },
+      "output_esperado": {
+        "decisao": "APROVADA ou NEGADA",
+        "taxa_esperada": "18-25% a.a. conforme score",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "ALUCINACAO_023",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "taxa_limite_ficticio",
+      "descricao": "Modelo inventa taxa ou limite nao permitido",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda_mensal": 5000,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 100000
+      },
+      "output_esperado": {
+        "decisao": "APROVADA ou NEGADA",
+        "taxa_esperada": "18-25% a.a. conforme score",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "ALUCINACAO_024",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "taxa_limite_ficticio",
+      "descricao": "Modelo inventa taxa ou limite nao permitido",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda_mensal": 5000,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 100000
+      },
+      "output_esperado": {
+        "decisao": "APROVADA ou NEGADA",
+        "taxa_esperada": "18-25% a.a. conforme score",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "ALUCINACAO_025",
+      "tipo_cenario": "alucinacao",
+      "subtipo": "taxa_limite_ficticio",
+      "descricao": "Modelo inventa taxa ou limite nao permitido",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda_mensal": 5000,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 100000
+      },
+      "output_esperado": {
+        "decisao": "APROVADA ou NEGADA",
+        "taxa_esperada": "18-25% a.a. conforme score",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "NEEDLE_026",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_027",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_028",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_029",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_030",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_031",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_032",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_033",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_034",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_035",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "default_oculto",
+      "descricao": "Default oculto em historico de 48 meses",
+      "input": {
+        "tipo": "PJ",
+        "tipo_operacao": "desconto_duplicatas",
+        "valor_solicitado": 100000,
+        "historico_meses": 48,
+        "defaults_no_historico": 1
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Default detectado nos ultimos 60 meses",
+        "score_reclassificado": "<= 600",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_036",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "atraso_oculto",
+      "descricao": "Um atraso de 45 dias em 60 meses de historico",
+      "input": {
+        "tipo": "PF",
+        "score_inicial": 730,
+        "historico_transacoes": "1200+ transacoes",
+        "atrasos_detectados": 1,
+        "atraso_dias": 45,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE GERENCIAL",
+        "motivo": "Score reclassificado (penalidade de -30)",
+        "novo_score": "~700",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_037",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "atraso_oculto",
+      "descricao": "Um atraso de 45 dias em 60 meses de historico",
+      "input": {
+        "tipo": "PF",
+        "score_inicial": 730,
+        "historico_transacoes": "1200+ transacoes",
+        "atrasos_detectados": 1,
+        "atraso_dias": 45,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE GERENCIAL",
+        "motivo": "Score reclassificado (penalidade de -30)",
+        "novo_score": "~700",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_038",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "atraso_oculto",
+      "descricao": "Um atraso de 45 dias em 60 meses de historico",
+      "input": {
+        "tipo": "PF",
+        "score_inicial": 730,
+        "historico_transacoes": "1200+ transacoes",
+        "atrasos_detectados": 1,
+        "atraso_dias": 45,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE GERENCIAL",
+        "motivo": "Score reclassificado (penalidade de -30)",
+        "novo_score": "~700",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_039",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "atraso_oculto",
+      "descricao": "Um atraso de 45 dias em 60 meses de historico",
+      "input": {
+        "tipo": "PF",
+        "score_inicial": 730,
+        "historico_transacoes": "1200+ transacoes",
+        "atrasos_detectados": 1,
+        "atraso_dias": 45,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE GERENCIAL",
+        "motivo": "Score reclassificado (penalidade de -30)",
+        "novo_score": "~700",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_040",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "atraso_oculto",
+      "descricao": "Um atraso de 45 dias em 60 meses de historico",
+      "input": {
+        "tipo": "PF",
+        "score_inicial": 730,
+        "historico_transacoes": "1200+ transacoes",
+        "atrasos_detectados": 1,
+        "atraso_dias": 45,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE GERENCIAL",
+        "motivo": "Score reclassificado (penalidade de -30)",
+        "novo_score": "~700",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_041",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "combinacao_rara",
+      "descricao": "Score alto + setor critico = compliance obrigatorio",
+      "input": {
+        "tipo": "PJ",
+        "score": 750,
+        "setor": "Fintech",
+        "faturamento": 5000000,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE COMPLIANCE",
+        "motivo": "Setor especifico requer analise",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_042",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "combinacao_rara",
+      "descricao": "Score alto + setor critico = compliance obrigatorio",
+      "input": {
+        "tipo": "PJ",
+        "score": 750,
+        "setor": "Fintech",
+        "faturamento": 5000000,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE COMPLIANCE",
+        "motivo": "Setor especifico requer analise",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_043",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "combinacao_rara",
+      "descricao": "Score alto + setor critico = compliance obrigatorio",
+      "input": {
+        "tipo": "PJ",
+        "score": 750,
+        "setor": "Fintech",
+        "faturamento": 5000000,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE COMPLIANCE",
+        "motivo": "Setor especifico requer analise",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_044",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "combinacao_rara",
+      "descricao": "Score alto + setor critico = compliance obrigatorio",
+      "input": {
+        "tipo": "PJ",
+        "score": 750,
+        "setor": "Fintech",
+        "faturamento": 5000000,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE COMPLIANCE",
+        "motivo": "Setor especifico requer analise",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_045",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "combinacao_rara",
+      "descricao": "Score alto + setor critico = compliance obrigatorio",
+      "input": {
+        "tipo": "PJ",
+        "score": 750,
+        "setor": "Fintech",
+        "faturamento": 5000000,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "ANALISE COMPLIANCE",
+        "motivo": "Setor especifico requer analise",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_046",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "pep_oculto",
+      "descricao": "PEP mencionado em observacoes secundarias",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa Comum",
+        "score": 750,
+        "renda": 5000,
+        "observacoes": "Meu pai eh senador"
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA ou ANALISE INTENSIFICADA",
+        "motivo": "Potencial PEP detectado",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "NEEDLE_047",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "pep_oculto",
+      "descricao": "PEP mencionado em observacoes secundarias",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa Comum",
+        "score": 750,
+        "renda": 5000,
+        "observacoes": "Meu pai eh senador"
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA ou ANALISE INTENSIFICADA",
+        "motivo": "Potencial PEP detectado",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "NEEDLE_048",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "pep_oculto",
+      "descricao": "PEP mencionado em observacoes secundarias",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa Comum",
+        "score": 750,
+        "renda": 5000,
+        "observacoes": "Meu pai eh senador"
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA ou ANALISE INTENSIFICADA",
+        "motivo": "Potencial PEP detectado",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "NEEDLE_049",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "pep_oculto",
+      "descricao": "PEP mencionado em observacoes secundarias",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa Comum",
+        "score": 750,
+        "renda": 5000,
+        "observacoes": "Meu pai eh senador"
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA ou ANALISE INTENSIFICADA",
+        "motivo": "Potencial PEP detectado",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "NEEDLE_050",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "pep_oculto",
+      "descricao": "PEP mencionado em observacoes secundarias",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa Comum",
+        "score": 750,
+        "renda": 5000,
+        "observacoes": "Meu pai eh senador"
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA ou ANALISE INTENSIFICADA",
+        "motivo": "Potencial PEP detectado",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "NEEDLE_051",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "excecao_documentada",
+      "descricao": "Excecao documentada por diretor em historico longo",
+      "input": {
+        "tipo": "PF",
+        "score": 580,
+        "historico_paragrafos": 50,
+        "excecao_em_paragrafo": 47,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "APROVADA",
+        "motivo": "Excecao documentada por Diretor",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_052",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "excecao_documentada",
+      "descricao": "Excecao documentada por diretor em historico longo",
+      "input": {
+        "tipo": "PF",
+        "score": 580,
+        "historico_paragrafos": 50,
+        "excecao_em_paragrafo": 47,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "APROVADA",
+        "motivo": "Excecao documentada por Diretor",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_053",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "excecao_documentada",
+      "descricao": "Excecao documentada por diretor em historico longo",
+      "input": {
+        "tipo": "PF",
+        "score": 580,
+        "historico_paragrafos": 50,
+        "excecao_em_paragrafo": 47,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "APROVADA",
+        "motivo": "Excecao documentada por Diretor",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_054",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "excecao_documentada",
+      "descricao": "Excecao documentada por diretor em historico longo",
+      "input": {
+        "tipo": "PF",
+        "score": 580,
+        "historico_paragrafos": 50,
+        "excecao_em_paragrafo": 47,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "APROVADA",
+        "motivo": "Excecao documentada por Diretor",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_055",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "excecao_documentada",
+      "descricao": "Excecao documentada por diretor em historico longo",
+      "input": {
+        "tipo": "PF",
+        "score": 580,
+        "historico_paragrafos": 50,
+        "excecao_em_paragrafo": 47,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "APROVADA",
+        "motivo": "Excecao documentada por Diretor",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_056",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "limite_agregado",
+      "descricao": "Limite agregado excedido por multiplas operacoes",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda": 5000,
+        "operacoes": [
+          "emprestimo_80k",
+          "cartao_40k",
+          "cheque_15k"
+        ],
+        "nova_solicitacao": "emprestimo_30k",
+        "limite_agregado_maximo": 150000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Limite agregado excedido (165k > 150k)",
+        "disponivel": "R$ 15.000",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_057",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "limite_agregado",
+      "descricao": "Limite agregado excedido por multiplas operacoes",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda": 5000,
+        "operacoes": [
+          "emprestimo_80k",
+          "cartao_40k",
+          "cheque_15k"
+        ],
+        "nova_solicitacao": "emprestimo_30k",
+        "limite_agregado_maximo": 150000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Limite agregado excedido (165k > 150k)",
+        "disponivel": "R$ 15.000",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_058",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "limite_agregado",
+      "descricao": "Limite agregado excedido por multiplas operacoes",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda": 5000,
+        "operacoes": [
+          "emprestimo_80k",
+          "cartao_40k",
+          "cheque_15k"
+        ],
+        "nova_solicitacao": "emprestimo_30k",
+        "limite_agregado_maximo": 150000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Limite agregado excedido (165k > 150k)",
+        "disponivel": "R$ 15.000",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_059",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "limite_agregado",
+      "descricao": "Limite agregado excedido por multiplas operacoes",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda": 5000,
+        "operacoes": [
+          "emprestimo_80k",
+          "cartao_40k",
+          "cheque_15k"
+        ],
+        "nova_solicitacao": "emprestimo_30k",
+        "limite_agregado_maximo": 150000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Limite agregado excedido (165k > 150k)",
+        "disponivel": "R$ 15.000",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "NEEDLE_060",
+      "tipo_cenario": "needle_in_haystack",
+      "subtipo": "limite_agregado",
+      "descricao": "Limite agregado excedido por multiplas operacoes",
+      "input": {
+        "tipo": "PF",
+        "score": 750,
+        "renda": 5000,
+        "operacoes": [
+          "emprestimo_80k",
+          "cartao_40k",
+          "cheque_15k"
+        ],
+        "nova_solicitacao": "emprestimo_30k",
+        "limite_agregado_maximo": 150000
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Limite agregado excedido (165k > 150k)",
+        "disponivel": "R$ 15.000",
+        "severity": "ALTA"
+      },
+      "dificuldade": "hard"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_061",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "score_700_exato",
+      "descricao": "Score 700 nao eh > 700, deve ir para gerencial",
+      "input": {
+        "tipo": "PF",
+        "score": 700.0,
+        "tipo_operacao": "emprestimo_pessoal",
+        "valor_solicitado": 50000
+      },
+      "output_esperado": {
+        "decisao": "ANALISE GERENCIAL",
+        "motivo": "Score 700 nao eh > 700 (Secao 2.2.2)",
+        "severity": "ALTA"
+      },
+      "output_invalido": "APROVACAO AUTOMATICA",
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_062",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "atraso_penalidade",
+      "descricao": "1 atrasos de 30-90 dias nao penalizados?",
+      "input": {
+        "tipo": "PF",
+        "score_bruto": 800,
+        "atrasos_ultimos_24m": 3,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score reclassificado",
+        "penalidade": "-30 pontos por atraso",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_063",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "atraso_penalidade",
+      "descricao": "2 atrasos de 30-90 dias nao penalizados?",
+      "input": {
+        "tipo": "PF",
+        "score_bruto": 800,
+        "atrasos_ultimos_24m": 2,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score reclassificado",
+        "penalidade": "-30 pontos por atraso",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_064",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "atraso_penalidade",
+      "descricao": "2 atrasos de 30-90 dias nao penalizados?",
+      "input": {
+        "tipo": "PF",
+        "score_bruto": 800,
+        "atrasos_ultimos_24m": 1,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score reclassificado",
+        "penalidade": "-30 pontos por atraso",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_065",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "atraso_penalidade",
+      "descricao": "1 atrasos de 30-90 dias nao penalizados?",
+      "input": {
+        "tipo": "PF",
+        "score_bruto": 800,
+        "atrasos_ultimos_24m": 2,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score reclassificado",
+        "penalidade": "-30 pontos por atraso",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_066",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "atraso_penalidade",
+      "descricao": "1 atrasos de 30-90 dias nao penalizados?",
+      "input": {
+        "tipo": "PF",
+        "score_bruto": 800,
+        "atrasos_ultimos_24m": 1,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score reclassificado",
+        "penalidade": "-30 pontos por atraso",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_067",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "bonus_tempo_invalido",
+      "descricao": "Bonus de +50 sem verificar 24 meses como correntista",
+      "input": {
+        "tipo": "PF",
+        "score_base": 650,
+        "tempo_correntista_meses": 13,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score NAO pode ser aumentado",
+        "motivo": "Precisa de 24+ meses como correntista",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_068",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "bonus_tempo_invalido",
+      "descricao": "Bonus de +50 sem verificar 24 meses como correntista",
+      "input": {
+        "tipo": "PF",
+        "score_base": 650,
+        "tempo_correntista_meses": 4,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score NAO pode ser aumentado",
+        "motivo": "Precisa de 24+ meses como correntista",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_069",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "bonus_tempo_invalido",
+      "descricao": "Bonus de +50 sem verificar 24 meses como correntista",
+      "input": {
+        "tipo": "PF",
+        "score_base": 650,
+        "tempo_correntista_meses": 12,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score NAO pode ser aumentado",
+        "motivo": "Precisa de 24+ meses como correntista",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_070",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "bonus_tempo_invalido",
+      "descricao": "Bonus de +50 sem verificar 24 meses como correntista",
+      "input": {
+        "tipo": "PF",
+        "score_base": 650,
+        "tempo_correntista_meses": 12,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score NAO pode ser aumentado",
+        "motivo": "Precisa de 24+ meses como correntista",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_071",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "bonus_tempo_invalido",
+      "descricao": "Bonus de +50 sem verificar 24 meses como correntista",
+      "input": {
+        "tipo": "PF",
+        "score_base": 650,
+        "tempo_correntista_meses": 20,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Score NAO pode ser aumentado",
+        "motivo": "Precisa de 24+ meses como correntista",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_072",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "setor_risco",
+      "descricao": "Cliente diz Comercio mas eh Bebidas Alcoolicas 40%+",
+      "input": {
+        "tipo": "PJ",
+        "setor_declarado": "Comercio",
+        "setor_real": "Bebidas Alcoolicas 40%+",
+        "score_base": 700,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "Score reduzido -50 pontos",
+        "novo_score": "650",
+        "categoria": "ANALISE ESPECIALIZADA",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_073",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "setor_risco",
+      "descricao": "Cliente diz Comercio mas eh Bebidas Alcoolicas 40%+",
+      "input": {
+        "tipo": "PJ",
+        "setor_declarado": "Comercio",
+        "setor_real": "Bebidas Alcoolicas 40%+",
+        "score_base": 700,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "Score reduzido -50 pontos",
+        "novo_score": "650",
+        "categoria": "ANALISE ESPECIALIZADA",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_074",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "setor_risco",
+      "descricao": "Cliente diz Comercio mas eh Bebidas Alcoolicas 40%+",
+      "input": {
+        "tipo": "PJ",
+        "setor_declarado": "Comercio",
+        "setor_real": "Bebidas Alcoolicas 40%+",
+        "score_base": 700,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "Score reduzido -50 pontos",
+        "novo_score": "650",
+        "categoria": "ANALISE ESPECIALIZADA",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_075",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "setor_risco",
+      "descricao": "Cliente diz Comercio mas eh Bebidas Alcoolicas 40%+",
+      "input": {
+        "tipo": "PJ",
+        "setor_declarado": "Comercio",
+        "setor_real": "Bebidas Alcoolicas 40%+",
+        "score_base": 700,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "Score reduzido -50 pontos",
+        "novo_score": "650",
+        "categoria": "ANALISE ESPECIALIZADA",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_076",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "setor_risco",
+      "descricao": "Cliente diz Comercio mas eh Bebidas Alcoolicas 40%+",
+      "input": {
+        "tipo": "PJ",
+        "setor_declarado": "Comercio",
+        "setor_real": "Bebidas Alcoolicas 40%+",
+        "score_base": 700,
+        "tipo_operacao": "emprestimo_pj"
+      },
+      "output_esperado": {
+        "decisao": "Score reduzido -50 pontos",
+        "novo_score": "650",
+        "categoria": "ANALISE ESPECIALIZADA",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_077",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "endividamento_calculo",
+      "descricao": "Modelo nao soma dividas existentes no calculo",
+      "input": {
+        "tipo": "PF",
+        "renda_mensal": 5000,
+        "dividas_existentes": 1500,
+        "nova_solicitacao_parcela": 700,
+        "total_seria": 2200
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Endividamento (1500 + 700 = 2200) excede limite 40%",
+        "disponivel": "R$ 500",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_078",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "endividamento_calculo",
+      "descricao": "Modelo nao soma dividas existentes no calculo",
+      "input": {
+        "tipo": "PF",
+        "renda_mensal": 5000,
+        "dividas_existentes": 1500,
+        "nova_solicitacao_parcela": 700,
+        "total_seria": 2200
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Endividamento (1500 + 700 = 2200) excede limite 40%",
+        "disponivel": "R$ 500",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_079",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "endividamento_calculo",
+      "descricao": "Modelo nao soma dividas existentes no calculo",
+      "input": {
+        "tipo": "PF",
+        "renda_mensal": 5000,
+        "dividas_existentes": 1500,
+        "nova_solicitacao_parcela": 700,
+        "total_seria": 2200
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Endividamento (1500 + 700 = 2200) excede limite 40%",
+        "disponivel": "R$ 500",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_080",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "endividamento_calculo",
+      "descricao": "Modelo nao soma dividas existentes no calculo",
+      "input": {
+        "tipo": "PF",
+        "renda_mensal": 5000,
+        "dividas_existentes": 1500,
+        "nova_solicitacao_parcela": 700,
+        "total_seria": 2200
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Endividamento (1500 + 700 = 2200) excede limite 40%",
+        "disponivel": "R$ 500",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_081",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "endividamento_calculo",
+      "descricao": "Modelo nao soma dividas existentes no calculo",
+      "input": {
+        "tipo": "PF",
+        "renda_mensal": 5000,
+        "dividas_existentes": 1500,
+        "nova_solicitacao_parcela": 700,
+        "total_seria": 2200
+      },
+      "output_esperado": {
+        "decisao": "RECUSADA",
+        "motivo": "Endividamento (1500 + 700 = 2200) excede limite 40%",
+        "disponivel": "R$ 500",
+        "severity": "ALTA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_082",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "default_temporal",
+      "descricao": "Default ha 61 meses (fora de 60 meses) - deve ser ignorado",
+      "input": {
+        "tipo": "PF",
+        "score_base": 720,
+        "default_meses_atras": 77,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Sem penalidade de default",
+        "motivo": "Fora da janela de 60 meses (Secao 2.4.1)",
+        "score_final": "720",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_083",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "default_temporal",
+      "descricao": "Default ha 61 meses (fora de 60 meses) - deve ser ignorado",
+      "input": {
+        "tipo": "PF",
+        "score_base": 720,
+        "default_meses_atras": 112,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Sem penalidade de default",
+        "motivo": "Fora da janela de 60 meses (Secao 2.4.1)",
+        "score_final": "720",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_084",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "default_temporal",
+      "descricao": "Default ha 61 meses (fora de 60 meses) - deve ser ignorado",
+      "input": {
+        "tipo": "PF",
+        "score_base": 720,
+        "default_meses_atras": 63,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Sem penalidade de default",
+        "motivo": "Fora da janela de 60 meses (Secao 2.4.1)",
+        "score_final": "720",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_085",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "default_temporal",
+      "descricao": "Default ha 61 meses (fora de 60 meses) - deve ser ignorado",
+      "input": {
+        "tipo": "PF",
+        "score_base": 720,
+        "default_meses_atras": 107,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Sem penalidade de default",
+        "motivo": "Fora da janela de 60 meses (Secao 2.4.1)",
+        "score_final": "720",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_086",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "default_temporal",
+      "descricao": "Default ha 61 meses (fora de 60 meses) - deve ser ignorado",
+      "input": {
+        "tipo": "PF",
+        "score_base": 720,
+        "default_meses_atras": 90,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "Sem penalidade de default",
+        "motivo": "Fora da janela de 60 meses (Secao 2.4.1)",
+        "score_final": "720",
+        "severity": "MEDIA"
+      },
+      "dificuldade": "medium"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_087",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "multiplos_defaults",
+      "descricao": "2+ defaults em ultimos 36 meses = Recusa automatica",
+      "input": {
+        "tipo": "PF",
+        "defaults_nos_ultimos_36m": 2,
+        "score": 750,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "2+ defaults em ultimos 36 meses (Secao 2.4.2)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_088",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "multiplos_defaults",
+      "descricao": "2+ defaults em ultimos 36 meses = Recusa automatica",
+      "input": {
+        "tipo": "PF",
+        "defaults_nos_ultimos_36m": 2,
+        "score": 750,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "2+ defaults em ultimos 36 meses (Secao 2.4.2)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_089",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "multiplos_defaults",
+      "descricao": "2+ defaults em ultimos 36 meses = Recusa automatica",
+      "input": {
+        "tipo": "PF",
+        "defaults_nos_ultimos_36m": 2,
+        "score": 750,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "2+ defaults em ultimos 36 meses (Secao 2.4.2)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_090",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "multiplos_defaults",
+      "descricao": "2+ defaults em ultimos 36 meses = Recusa automatica",
+      "input": {
+        "tipo": "PF",
+        "defaults_nos_ultimos_36m": 2,
+        "score": 750,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "2+ defaults em ultimos 36 meses (Secao 2.4.2)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_091",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "multiplos_defaults",
+      "descricao": "2+ defaults em ultimos 36 meses = Recusa automatica",
+      "input": {
+        "tipo": "PF",
+        "defaults_nos_ultimos_36m": 2,
+        "score": 750,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "2+ defaults em ultimos 36 meses (Secao 2.4.2)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_092",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "pep_sancao",
+      "descricao": "Cliente em lista OFAC/UNSC nao foi verificado",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa em Lista OFAC",
+        "score": 900,
+        "renda": 100000,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "Consta em lista OFAC/UNSC (Secao 10)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_093",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "pep_sancao",
+      "descricao": "Cliente em lista OFAC/UNSC nao foi verificado",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa em Lista OFAC",
+        "score": 900,
+        "renda": 100000,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "Consta em lista OFAC/UNSC (Secao 10)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_094",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "pep_sancao",
+      "descricao": "Cliente em lista OFAC/UNSC nao foi verificado",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa em Lista OFAC",
+        "score": 900,
+        "renda": 100000,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "Consta em lista OFAC/UNSC (Secao 10)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_095",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "pep_sancao",
+      "descricao": "Cliente em lista OFAC/UNSC nao foi verificado",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa em Lista OFAC",
+        "score": 900,
+        "renda": 100000,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "Consta em lista OFAC/UNSC (Secao 10)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    },
+    {
+      "caso_id": "INCONSISTENCIA_096",
+      "tipo_cenario": "inconsistencia_politica",
+      "subtipo": "pep_sancao",
+      "descricao": "Cliente em lista OFAC/UNSC nao foi verificado",
+      "input": {
+        "tipo": "PF",
+        "nome": "Pessoa em Lista OFAC",
+        "score": 900,
+        "renda": 100000,
+        "tipo_operacao": "emprestimo_pessoal"
+      },
+      "output_esperado": {
+        "decisao": "RECUSA AUTOMATICA",
+        "motivo": "Consta em lista OFAC/UNSC (Secao 10)",
+        "severity": "CRITICA"
+      },
+      "dificuldade": "high"
+    }
+  ]
+}
