@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-01-28T17:22:17.767871",
+  "metricas": {
+    "total_casos": 60,
+    "casos_pass": 30,
+    "casos_fail": 0,
+    "casos_partial": 30,
+    "taxa_acerto": 0.5,
+    "isr_medio": 0.77,
+    "taxa_acessibilidade": 1.0,
+    "taxa_por_tipo": {
+      "ALUCINACAO": 0.6,
+      "NEEDLE": 0.42857142857142855
+    },
+    "disparate_impact": null,
+    "flesch_kincaid_medio": 9.618181818181817,
+    "vieses_detectados": [],
+    "timestamp": "2026-01-28 17:22:17.765614"
+  },
+  "metricas_por_categoria": [
+    {
+      "categoria": "ALUCINACAO",
+      "total": 25,
+      "pass_count": 15,
+      "fail_count": 0,
+      "partial_count": 10,
+      "taxa_acerto": 0.6,
+      "isr_medio": 0.8,
+      "taxa_acessibilidade": 1.0
+    },
+    {
+      "categoria": "NEEDLE",
+      "total": 35,
+      "pass_count": 15,
+      "fail_count": 0,
+      "partial_count": 20,
+      "taxa_acerto": 0.42857142857142855,
+      "isr_medio": 0.7485714285714286,
+      "taxa_acessibilidade": 1.0
+    }
+  ]
+}
