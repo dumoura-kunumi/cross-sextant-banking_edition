@@ -1,5 +1,12 @@
 """
-Calculadora de métricas globais (ISR, disparate impact, acessibilidade).
+Calculadora de métricas globais (CSR, ISR Semântico, disparate impact, acessibilidade).
+
+NOTA IMPORTANTE:
+================
+- CSR (Content Sufficiency Rating): Completude estrutural da resposta
+- ISR Semântico: Métrica de teoria da informação (src/tools/isr_auditor.py)
+
+O campo `isr_medio` em MetricasGlobais representa o CSR médio por compatibilidade.
 """
 from typing import List, Dict, Optional
 from collections import defaultdict
@@ -38,9 +45,11 @@ class MetricsCalculator:
         # Taxa de acerto
         taxa_acerto = passes / total if total > 0 else 0.0
         
-        # ISR médio (Information Sufficiency Ratio)
-        # ISR = pontos / 5.0 (normalizado)
-        isr_medio = sum(r.pontos for r in resultados) / total / 5.0 if total > 0 else 0.0
+        # CSR médio (Content Sufficiency Rating) - completude estrutural
+        # NOTA: Mantido como `isr_medio` por compatibilidade, mas é CSR
+        # CSR = pontos / 5.0 (normalizado)
+        # Para ISR Semântico real, use isr_semantico_medio (quando disponível via isr_auditor.py)
+        csr_medio = sum(r.pontos for r in resultados) / total / 5.0 if total > 0 else 0.0
         
         # Acessibilidade
         acessiveis = len([r for r in resultados if r.eh_acessivel])
@@ -75,7 +84,7 @@ class MetricsCalculator:
             casos_fail=fails,
             casos_partial=partials,
             taxa_acerto=taxa_acerto,
-            isr_medio=isr_medio,
+            isr_medio=csr_medio,  # NOTA: Campo legado - é CSR, não ISR Semântico
             taxa_acessibilidade=taxa_acessibilidade,
             taxa_por_tipo=taxa_por_tipo,
             disparate_impact=disparate_impact,
@@ -184,8 +193,9 @@ class MetricsCalculator:
         metricas = []
         for categoria, dados in por_categoria.items():
             total = dados["total"]
-            isr_medio = sum(dados["pontos"]) / total / 5.0 if total > 0 else 0.0
-            
+            # CSR médio por categoria (mantido como isr_medio por compatibilidade)
+            csr_medio = sum(dados["pontos"]) / total / 5.0 if total > 0 else 0.0
+
             metricas.append(MetricasPorCategoria(
                 categoria=categoria,
                 total=total,
@@ -193,7 +203,7 @@ class MetricsCalculator:
                 fail_count=dados["fail"],
                 partial_count=dados["partial"],
                 taxa_acerto=dados["pass"] / total if total > 0 else 0.0,
-                isr_medio=isr_medio,
+                isr_medio=csr_medio,  # CSR por categoria
                 taxa_acessibilidade=dados["acessiveis"] / total if total > 0 else 0.0
             ))
         

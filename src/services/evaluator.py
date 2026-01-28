@@ -102,9 +102,10 @@ class CaseEvaluator:
             resposta_modelo.rastreamento
         )
 
-        # 4. VALIDAR ISR (Information Sufficiency)
-        isr = self._calcular_isr(json_data, resposta_modelo)
-        isr_adequado = isr >= 0.85
+        # 4. VALIDAR CSR (Content Sufficiency Rating)
+        # NOTA: Este é o CSR (completude estrutural), NÃO o ISR Semântico
+        csr = self._calcular_csr(json_data, resposta_modelo)
+        csr_adequado = csr >= 0.85
 
         # 5. VALIDAR DECISÃO
         decisao_correta = self._validar_decisao(resposta_modelo, caso_esperado)
@@ -116,7 +117,7 @@ class CaseEvaluator:
             'eh_acessivel': eh_acessivel,
             'tem_rastreamento': tem_rastreamento,
             'rastreamento_completo': rastreamento_completo,
-            'isr_adequado': isr_adequado,
+            'csr_adequado': csr_adequado,
             'decisao_correta': decisao_correta
         }
 
@@ -138,7 +139,7 @@ class CaseEvaluator:
             status=status,
             criterios=criterios,
             score_acessibilidade=score_acessibilidade,
-            isr=isr,
+            csr=csr,
             vieses=vieses
         )
 
@@ -159,7 +160,7 @@ class CaseEvaluator:
             feedback=feedback,
             resposta_modelo=resposta_modelo,
             discrepancia=discrepancia,
-            isr_score=isr,
+            isr_score=csr,  # NOTA: Este campo mantém nome por compatibilidade, mas é CSR
             tem_rastreamento=tem_rastreamento
         )
 
@@ -269,11 +270,24 @@ class CaseEvaluator:
 
         return tem_rastreamento, rastreamento_completo, score_rastreamento
 
-    def _calcular_isr(self, json_data: Dict, resposta: RespostaModelo) -> float:
+    def _calcular_csr(self, json_data: Dict, resposta: RespostaModelo) -> float:
         """
-        Calcula ISR (Information Sufficiency Rating).
+        Calcula CSR (Content Sufficiency Rating).
 
-        ISR = (Campos presentes / Campos obrigatórios) * Qualidade dados
+        NOTA: Este NÃO é o ISR Semântico (Information Sufficiency Ratio) usado
+        para detecção de alucinações. O CSR mede apenas a completude estrutural
+        da resposta do modelo.
+
+        ISR Semântico está em: src/tools/isr_auditor.py (usa KL Divergence + Entropia)
+
+        CSR = (Campos presentes / Campos obrigatórios) * Qualidade dados
+
+        Args:
+            json_data: Dados JSON da resposta
+            resposta: Resposta estruturada do modelo
+
+        Returns:
+            Score de completude (0.0 a 1.0)
         """
         # Pesos dos campos
         pesos = {
@@ -286,7 +300,7 @@ class CaseEvaluator:
             'confianca_isr': 0.10
         }
 
-        isr = 0.0
+        csr = 0.0
 
         for campo, peso in pesos.items():
             valor = json_data.get(campo)
@@ -295,27 +309,27 @@ class CaseEvaluator:
                 if campo == 'explicacao_acessivel':
                     # Qualidade da explicação
                     if isinstance(valor, str) and len(valor) > 50:
-                        isr += peso
+                        csr += peso
                     elif isinstance(valor, str) and len(valor) > 20:
-                        isr += peso * 0.5
+                        csr += peso * 0.5
                 elif campo == 'rastreamento':
                     # Qualidade do rastreamento
                     if isinstance(valor, list) and len(valor) >= 5:
-                        isr += peso
+                        csr += peso
                     elif isinstance(valor, list) and len(valor) >= 3:
-                        isr += peso * 0.7
+                        csr += peso * 0.7
                     elif isinstance(valor, list) and len(valor) > 0:
-                        isr += peso * 0.3
+                        csr += peso * 0.3
                 else:
-                    isr += peso
+                    csr += peso
 
-        # Usa confianca_isr do modelo se disponível
+        # Usa confianca do modelo se disponível (campo legado 'confianca_isr')
         if 'confianca_isr' in json_data and isinstance(json_data['confianca_isr'], (int, float)):
-            modelo_isr = json_data['confianca_isr']
+            modelo_confianca = json_data['confianca_isr']
             # Média ponderada
-            isr = (isr * 0.6) + (modelo_isr * 0.4)
+            csr = (csr * 0.6) + (modelo_confianca * 0.4)
 
-        return min(1.0, max(0.0, isr))
+        return min(1.0, max(0.0, csr))
 
     def _validar_decisao(self, resposta: RespostaModelo, caso: CasoTeste) -> bool:
         """Valida se a decisão está correta"""
@@ -348,7 +362,7 @@ class CaseEvaluator:
         - eh_acessivel: 1.0 ponto (baseado em score_acessibilidade)
         - tem_rastreamento: 0.5 ponto
         - rastreamento_completo: 0.5 ponto (baseado em score_rastreamento)
-        - isr_adequado: 0.5 ponto
+        - csr_adequado: 0.5 ponto (Content Sufficiency Rating)
         - decisao_correta: 1.5 pontos
         """
         pontos = 0.0
@@ -379,8 +393,8 @@ class CaseEvaluator:
         if criterios.get('rastreamento_completo', False):
             pontos += score_rastreamento * 0.5
 
-        # ISR adequado
-        if criterios.get('isr_adequado', False):
+        # CSR adequado (Content Sufficiency Rating)
+        if criterios.get('csr_adequado', False):
             pontos += 0.5
 
         return min(5.0, max(0.0, pontos))
@@ -426,7 +440,7 @@ class CaseEvaluator:
         status: str,
         criterios: Dict[str, bool],
         score_acessibilidade: float,
-        isr: float,
+        csr: float,
         vieses: List[str]
     ) -> str:
         """Gera feedback descritivo estruturado"""
@@ -460,8 +474,8 @@ class CaseEvaluator:
         else:
             partes.append("Rastreamento: FALTANDO")
 
-        # ISR
-        partes.append(f"ISR: {isr:.2f}")
+        # CSR (Content Sufficiency Rating)
+        partes.append(f"CSR: {csr:.2f}")
 
         # Vieses
         if vieses:

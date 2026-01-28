@@ -1,5 +1,29 @@
 """
 Modelos de métricas do Sextant.
+
+NOMENCLATURA IMPORTANTE:
+========================
+
+Este projeto usa DUAS métricas diferentes com nomes similares:
+
+1. CSR (Content Sufficiency Rating):
+   - Localização: src/services/evaluator.py
+   - Tipo: Heurística baseada em completude de campos
+   - Fórmula: Soma ponderada de campos presentes
+   - Uso: Validação estrutural da resposta do modelo
+   - Range: 0.0 a 1.0
+
+2. ISR Semântico (Information Sufficiency Ratio):
+   - Localização: src/tools/isr_auditor.py
+   - Tipo: Métrica baseada em Teoria da Informação (Chlon et al. 2025)
+   - Fórmula: ISR = Delta / B2T (usa KL Divergence, Entropia, Permutações)
+   - Uso: Detecção de alucinações e instabilidade do modelo
+   - Range: 0.0 a ∞ (>=1.0 = aprovado, <1.0 = bloqueado)
+
+Por razões de compatibilidade retroativa, o campo `isr_medio` em MetricasGlobais
+representa o CSR médio (score normalizado), NÃO o ISR Semântico.
+
+Para o ISR Semântico real, use o campo `isr_semantico_medio` quando disponível.
 """
 from pydantic import BaseModel, Field
 from typing import Dict, List, Optional
@@ -7,7 +31,12 @@ from datetime import datetime
 
 
 class MetricasGlobais(BaseModel):
-    """Métricas globais da auditoria"""
+    """
+    Métricas globais da auditoria.
+
+    NOTA: O campo `isr_medio` é na verdade o CSR médio (Content Sufficiency Rating),
+    mantido por compatibilidade. Para o ISR Semântico real, use `isr_semantico_medio`.
+    """
     total_casos: int = 0
     casos_pass: int = 0
     casos_fail: int = 0
@@ -17,7 +46,11 @@ class MetricasGlobais(BaseModel):
         0.0,
         ge=0,
         le=1,
-        description="Information Sufficiency Ratio médio"
+        description="CSR médio (Content Sufficiency Rating) - completude estrutural. NOTA: Nome legado, não é o ISR Semântico."
+    )
+    isr_semantico_medio: Optional[float] = Field(
+        None,
+        description="ISR Semântico médio (Information Sufficiency Ratio) - métrica de teoria da informação para detecção de alucinações"
     )
     taxa_acessibilidade: float = Field(
         0.0,
@@ -55,12 +88,20 @@ class MetricasGlobais(BaseModel):
 
 
 class MetricasPorCategoria(BaseModel):
-    """Métricas agrupadas por categoria"""
+    """
+    Métricas agrupadas por categoria.
+
+    NOTA: O campo `isr_medio` é CSR (Content Sufficiency Rating),
+    mantido por compatibilidade retroativa.
+    """
     categoria: str
     total: int = 0
     pass_count: int = 0
     fail_count: int = 0
     partial_count: int = 0
     taxa_acerto: float = 0.0
-    isr_medio: float = 0.0
+    isr_medio: float = Field(
+        0.0,
+        description="CSR médio por categoria (nome legado 'isr_medio')"
+    )
     taxa_acessibilidade: float = 0.0
