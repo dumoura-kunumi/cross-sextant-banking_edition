@@ -9,7 +9,7 @@ O Sextant é um framework de auditoria automatizada para sistemas de IA que toma
 - **Alucinação**: Detecta quando o modelo inventa dados ou clientes fictícios
 - **Needle-in-Haystack**: Verifica se o modelo encontra informações críticas em dados extensos
 - **Consistência**: Valida se o modelo aplica regras de forma consistente
-- **Design for All**: Garante que explicações são acessíveis (linguagem de 8ª série)
+- **Design for All**: Garante que explicações são acessíveis 
 - **ISR (Information Sufficiency Rating)**: Mede a qualidade e completude dos dados
 
 ## Instalação
